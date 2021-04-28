@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nep11Contract", "Nep11Contract\Nep11Contract.csproj", "{23705343-17C4-478C-A3EE-4BD1D7AFFAAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nep17Contract", "Nep17Contract\Nep17Contract.csproj", "{77213017-1105-43A0-BF95-97C0CB2156AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23705343-17C4-478C-A3EE-4BD1D7AFFAAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23705343-17C4-478C-A3EE-4BD1D7AFFAAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23705343-17C4-478C-A3EE-4BD1D7AFFAAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23705343-17C4-478C-A3EE-4BD1D7AFFAAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77213017-1105-43A0-BF95-97C0CB2156AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77213017-1105-43A0-BF95-97C0CB2156AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77213017-1105-43A0-BF95-97C0CB2156AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77213017-1105-43A0-BF95-97C0CB2156AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9432C5C4-2522-4C94-86DA-BD2D9E7C2235}
+	EndGlobalSection
+EndGlobal
