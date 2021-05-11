@@ -42,13 +42,14 @@ namespace Neo3Contract
         {
             if (!update)
             {
-                Storage.Put(Storage.CurrentContext, "deploy", 11);
-                OnNotify("update", 1);
+                Mint(Owner, 1_0000_0000_00000000);
+                Storage.Put(Storage.CurrentContext, "deploy", 12345);
+                OnNotify("deploy", 1);
             }
             else
             {
                 Storage.Put(Storage.CurrentContext, "update", 11);
-                OnNotify("deploy", 1);
+                OnNotify("update", 1);
             }
         }
 
@@ -61,19 +62,17 @@ namespace Neo3Contract
 
         public static new void Mint(UInt160 to, BigInteger amt)
         {
-            Mint(to, amt);
+            Nep17Token.Mint(to, amt);
         }
 
         public static new void Burn(UInt160 account, BigInteger amt)
         {
-            Burn(account, amt);
+            Nep17Token.Burn(account, amt);
         }
 
         public static UInt160 Test(int amt)
         {
             var tx = (Transaction)Runtime.ScriptContainer;
-
-
 
             return tx.Sender;
         }
