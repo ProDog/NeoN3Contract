@@ -18,6 +18,11 @@ namespace Neo3Contract
         [InitialValue("NUNtEBBbJkmPrmhiVSPN6JuM7AcE8FJ5sE", Neo.SmartContract.ContractParameterType.Hash160)]
         public static UInt160 Owner;
 
+        public delegate void Notify(params object[] arg);
+
+        [DisplayName("test_event")]
+        public static event Notify OnNotify;
+
         public override string Symbol()
         {
             return "Neo-Nep17";
@@ -33,23 +38,18 @@ namespace Neo3Contract
             return Runtime.CheckWitness(Owner);
         }
 
-        public delegate void Notify(params object[] arg);
-
-        [DisplayName("test_event")]
-        public static event Notify OnNotify;
-
         public static void _deploy(object data, bool update)
         {
-            if (!update)
+            if (update)
+            {
+                Storage.Put(Storage.CurrentContext, "update", 11);
+                OnNotify("update", 1);
+            }
+            else
             {
                 Mint(Owner, 1_0000_0000_00000000);
                 Storage.Put(Storage.CurrentContext, "deploy", 12345);
                 OnNotify("deploy", 1);
-            }
-            else
-            {
-                Storage.Put(Storage.CurrentContext, "update", 11);
-                OnNotify("update", 1);
             }
         }
 
@@ -70,16 +70,9 @@ namespace Neo3Contract
             Nep17Token.Burn(account, amt);
         }
 
-        public static UInt160 Test(int amt)
-        {
-            var tx = (Transaction)Runtime.ScriptContainer;
-
-            return tx.Sender;
-        }
-
         public static void OnNEP17Payment(UInt160 from, BigInteger amount, object data)
         {
-
+            OnNotify("OnNEP17Payment", from, amount, data);
         }
     }
 }
