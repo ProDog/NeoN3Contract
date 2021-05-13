@@ -55,7 +55,7 @@ namespace Neo3Contract
 
         public static bool Verify()
         {
-            return Runtime.CheckWitness(Owner);
+            return Runtime.CheckWitness(GetOwner());
         }
 
         public static bool IsOwner()
