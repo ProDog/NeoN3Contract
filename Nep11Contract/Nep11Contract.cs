@@ -72,14 +72,14 @@ namespace Neo3Contract
         {
             OnNotify("OnNEP11Payment", from, amount, tokenId, data);
 
-            Mint(from, "OnNEP11Payment");
+            //Mint(from, "OnNEP11Payment");
         }
 
         public static void OnNEP17Payment(UInt160 from, BigInteger amount, object data)
         {
             OnNotify("OnNEP17Payment", from, amount, data);
 
-            Mint(from, "OnNEP17Payment");
+            //Mint(from, "OnNEP17Payment");
         }
        
     }
